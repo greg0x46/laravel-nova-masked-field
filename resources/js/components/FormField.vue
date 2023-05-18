@@ -1,17 +1,17 @@
 <template>
     <DefaultField
-        :field="field"
+        :field="currentField"
         :errors="errors"
         :show-help-text="showHelpText"
         :full-width-content="fullWidthContent"
     >
         <template #field>
             <input
-                :id="field.attribute"
+                :id="currentField.attribute"
                 type="text"
                 class="w-full form-control form-input form-input-bordered"
                 :class="errorClasses"
-                :placeholder="field.name"
+                :placeholder="currentField.name"
                 v-model="value"
                 v-maska
                 :data-maska="mask"
@@ -21,40 +21,36 @@
 </template>
 
 <script>
-import {FormField, HandlesValidationErrors} from 'laravel-nova'
+import {DependentFormField, HandlesValidationErrors} from 'laravel-nova'
 import {vMaska} from 'maska'
 
 export default {
-    mixins: [FormField, HandlesValidationErrors],
+    mixins: [DependentFormField, HandlesValidationErrors],
 
     directives: {maska: vMaska},
 
     props: ['resourceName', 'resourceId', 'field'],
-    data: () => {
-        return {
-            mask: '',
-        }
-    },
-
 
     methods: {
         /*
          * Set the initial, internal value for the field.
          */
         setInitialValue() {
-            this.value = this.field.value || ''
+            this.value = this.currentField.value || ''
         },
 
         /**
          * Fill the given FormData object with the field's internal value.
          */
         fill(formData) {
-            formData.append(this.field.attribute, this.value || '')
+            formData.append(this.currentField.attribute, this.value || '')
         },
     },
 
-    created() {
-        this.mask = this.field.mask
-    }
+    computed: {
+        mask() {
+            return this.currentField.mask;
+        },
+    },
 }
 </script>
