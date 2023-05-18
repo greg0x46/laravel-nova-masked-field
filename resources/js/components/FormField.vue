@@ -13,7 +13,8 @@
                 :class="errorClasses"
                 :placeholder="field.name"
                 v-model="value"
-                v-maska="mask"
+                v-maska
+                :data-maska="mask"
             />
         </template>
     </DefaultField>
@@ -21,9 +22,12 @@
 
 <script>
 import {FormField, HandlesValidationErrors} from 'laravel-nova'
+import {vMaska} from 'maska'
 
 export default {
     mixins: [FormField, HandlesValidationErrors],
+
+    directives: {maska: vMaska},
 
     props: ['resourceName', 'resourceId', 'field'],
     data: () => {
