@@ -15,6 +15,7 @@
                 v-model="value"
                 v-maska
                 :data-maska="mask"
+                data-maska-eager
             />
         </template>
     </DefaultField>
