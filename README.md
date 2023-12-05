@@ -71,3 +71,14 @@ You can refer to the [beholdr/maska](https://github.com/beholdr/maska)  reposito
 * It is a custom field for [Laravel Nova](https://nova.laravel.com/)
 * It uses [beholdr/maska](https://github.com/beholdr/maska)
 * It is inpired by [wemersonrv/input-mask](https://novapackages.com/packages/wemersonrv/input-mask)
+
+
+## Notice Regarding Nova License
+
+Hey everyone,
+
+My Nova license expired in November 2023 for version [v4.29.2](https://nova.laravel.com/releases/4.29.2), which is the last version I have access to.
+Currently, I don't have plans to renew it, so unfortunately, I won't be able to assist with issues related to updates or newer Nova features.
+Feel free to seek alternative support or solutions with other users or maintainers.
+
+Thank you for your understanding.
