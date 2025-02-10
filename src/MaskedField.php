@@ -26,4 +26,19 @@ class MaskedField extends Field
     {
         return $this->withMeta(['mask' => $mask]);
     }
+
+
+    /**
+     * Set raw mode when save
+     *  TRUE    Send value without mask ( RAW )
+     *  FALSE   Send value with mask
+     *
+     * @param  bool  $raw
+     * @return $this
+     */
+    public function raw(bool $raw = true)
+    {
+        return $this->withMeta([__FUNCTION__ => $raw]);
+    }
+
 }
