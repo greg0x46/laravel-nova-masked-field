@@ -45,9 +45,9 @@ export default {
          */
         fill(formData) {
           let rawValue = this.value || "";
-          if (this.field.raw) {
-            for (let i = 0; i < this.field.mask.length; i++) {
-              rawValue = rawValue.replace(this.field.mask[i], "");
+          if (this.currentField.raw) {
+            for (let i = 0; i < this.currentField.mask.length; i++) {
+              rawValue = rawValue.replace(this.currentField.mask[i], "");
             }
           }
             formData.append(this.currentField.attribute, rawValue)
