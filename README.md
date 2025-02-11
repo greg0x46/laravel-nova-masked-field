@@ -26,6 +26,16 @@ public function fields(Request $request)
 }
 ```
 
+3. Optional - Save Value Without Mask  
+If you want to store the raw (unmasked) value in the database, use the `raw()` method:  
+
+```php
+MaskedField::make('Phone')
+    ->mask('(###) ###-####')
+    ->raw(),
+```
+
+
 ![masked-field-demo](https://user-images.githubusercontent.com/16712150/200448755-d3fcc39b-28b6-4145-bbd0-f2d5c8e23713.png)
 
 ## Usage with dependsOn

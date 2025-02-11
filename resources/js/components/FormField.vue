@@ -44,7 +44,13 @@ export default {
          * Fill the given FormData object with the field's internal value.
          */
         fill(formData) {
-            formData.append(this.currentField.attribute, this.value || '')
+          let rawValue = this.value || "";
+          if (this.currentField.raw) {
+            for (let i = 0; i < this.currentField.mask.length; i++) {
+              rawValue = rawValue.replace(this.currentField.mask[i], "");
+            }
+          }
+            formData.append(this.currentField.attribute, rawValue)
         },
     },
 
