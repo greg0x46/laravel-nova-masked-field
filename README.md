@@ -80,7 +80,7 @@ You can refer to the [beholdr/maska](https://github.com/beholdr/maska)  reposito
 
 * It is a custom field for [Laravel Nova](https://nova.laravel.com/)
 * It uses [beholdr/maska](https://github.com/beholdr/maska)
-* It is inpired by [wemersonrv/input-mask](https://novapackages.com/packages/wemersonrv/input-mask)
+* It is inspired by [wemersonrv/input-mask](https://novapackages.com/packages/wemersonrv/input-mask)
 
 
 ## Notice Regarding Nova License
